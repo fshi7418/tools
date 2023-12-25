@@ -1,7 +1,6 @@
 import sys
 import os
 import subprocess
-from pydub import AudioSegment
 from pydub.exceptions import PydubException
 
 
@@ -21,13 +20,14 @@ def convert_to_mp3(input_file_, output_file_):
 
 
 if __name__ == "__main__":
-    # # Check if the correct number of command line arguments is provided
-    if len(sys.argv) != 2:
-        print("Usage: python convert_to_mp3.py input_file")
+    # Check if the correct number of command line arguments is provided
+    if len(sys.argv) != 3:
+        print("Usage: python convert_audio_format.py input_file")
         sys.exit(1)
 
     # Get the input file from the command line argument
     input_file = sys.argv[1]
+    output_format = sys.argv[2]
     # input_file = r'/home/franks/Downloads/Symphony No.6 (1st movement).m4a'
     # input_file = r'/home/franks/Documents/Podcasts/日谈公园/440. 疫情打不垮环球航海心，两年之后他再度启航.m4a'
     file_base_name = os.path.basename(input_file)
@@ -35,6 +35,6 @@ if __name__ == "__main__":
     pwd = os.getcwd()
 
     # Output file will have the same name with a .mp3 extension
-    output_file = os.path.join(pwd, f'{file_name}.mp3')
+    output_file = os.path.join(pwd, f'{file_name}.{output_format}')
 
     convert_to_mp3(input_file, output_file)
