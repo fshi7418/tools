@@ -32,10 +32,10 @@ def split_pdf(input_pdf_, split_page, output_pdf1, output_pdf2):
 
 
 # Example usage:
-pdfs_path = r'/home/franks/Documents/Applications/Permanent Resident Travel Document 2025/赵泉霖永久居民签证申请材料/护照全部/赵泉霖'
+pdfs_path = r'/home/franks/Documents/'
 os.chdir(pdfs_path)
 
-input_pdf = 'passport part 1-25.pdf'  # The file path of the output PDF
-split_pdf1 = 'passport part 1-25 real.pdf'
-split_pdf2 = 'passport part 26.pdf'
-split_pdf(input_pdf, 13, split_pdf1, split_pdf2)
+input_pdf = 'input.pdf'  # The file path of the output PDF
+split_pdf1 = 'output1.pdf'
+split_pdf2 = 'output2.pdf'
+split_pdf(input_pdf, 1, split_pdf1, split_pdf2)
